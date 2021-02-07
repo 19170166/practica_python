@@ -1,0 +1,43 @@
+{
+    "personas": [
+        {
+            "id": 1,
+            "nombre": "angel",
+            "objeto": {
+                "balon": 5,
+                "valla": 0,
+                "bate": 0,
+                "tela": 0,
+                "porteria": 0
+            }
+        },
+        {
+            "id": 2,
+            "nombre": "abraham",
+            "objeto": {
+                "balon": 0,
+                "valla": 0,
+                "bate": 0,
+                "tela": 0,
+                "porteria": 0
+            }
+        }
+    ],
+    "deudores": [],
+    "pedidos": [
+        {
+            "nombre": "angel",
+            "balon": "5",
+            "fecha": "2020"
+        }
+    ],
+    "entregas": [],
+    "inventario": {
+        "balon": 45,
+        "valla": 50,
+        "porteria": 50,
+        "tela": 50,
+        "bate": 50
+    },
+    "idu": 3
+}
