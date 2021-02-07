@@ -25,8 +25,8 @@ class Mongo:
         newvalues = {"$set": {campo: valor}}
         self.mycol.update_one(myquery, newvalues)
 
-    def insertar_pedido(self, idp, objeto, valor, fecha):
-        mydict = {"_id": self.mycol2.find().count() + 1, "persona_id": idp, "objeto": objeto, "valor": valor,
+    def insertar_pedido(self, idp, objeto, cantidad, fecha):
+        mydict = {"_id": self.mycol2.find().count() + 1, "persona_id": idp, "objeto": objeto, "cantidad": cantidad,
                   "fecha": fecha}
         self.mycol2.insert_one(mydict)
 

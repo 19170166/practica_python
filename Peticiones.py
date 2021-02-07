@@ -33,4 +33,4 @@ class Peticiones:
         self.__peticiones.modificar_pedido(id=id,campo=campo,valor=valor)
 
     def insertar_pedido(self,idp,objeto,valor,fecha):
-        self.__peticiones.insertar_pedido(idp=idp,objeto=objeto,valor=valor,fecha=fecha)
+        self.__peticiones.insertar_pedido(idp=idp,objeto=objeto,cantidad=valor,fecha=fecha)

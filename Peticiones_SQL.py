@@ -17,11 +17,9 @@ class PSQL:
                               'objeto varchar(40), cantidad int, fecha date,foreign key (persona_id) references '
                               'personas (id))')
 
-    def insertar(self, usuario):
+    def insertar(self, idu, nombre, balon, valla, bate, tela, porteria):
         sql = 'insert into personas (id,nombre,balon,valla,bate,tela,porteria) values(%s,%s,%s,%s,%s,%s,%s)'
-        val = [usuario.obt_id(), usuario.obt_nombre(), usuario.obt_data()['balon'],
-               usuario.obt_data()['valla'], usuario.obt_data()['bate'], usuario.obt_data()['tela'],
-               usuario.obt_data()['porteria']]
+        val = [idu,nombre,balon,valla,bate,tela,porteria]
         self.mycursor.execute(sql, val)
         self.mydb.commit()
 
@@ -41,8 +39,9 @@ class PSQL:
         return self.mycursor.fetchall()
 
     def insertar_pedido(self,idp,objeto,cantidad,fecha):
-        sql=f'insert into pedidos (persona_id,objeto,cantidad,fecha) values({idp},{objeto},{cantidad},{fecha}) '
-        self.mycursor.execute(sql)
+        sql=f'insert into pedidos (persona_id,objeto,cantidad,fecha) values(%s,%s,%s,%s)'
+        valores=[idp,objeto,cantidad,fecha]
+        self.mycursor.execute(sql,valores)
         self.mydb.commit()
 
     def modificar_pedido(self,campo,valor,id):
